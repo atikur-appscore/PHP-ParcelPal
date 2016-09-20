@@ -1,0 +1,104 @@
+<div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-xs-6">
+                <label class="page-title pull-left">Runs</label>
+               <!--  <label ng-if="action=='Update' && !isEdit" class="lbl-edit pull-left" ng-click="switchMode()"><i class="glyphicon glyphicon-pencil"></i> <span>EDIT</span></label> -->
+            </div>
+            <div class="col-xs-6" ng-if="(action=='Update' && isEdit)">
+                <button class="form-control big-button btn-blue pull-right" ng-click="switchMode()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="box" ng-if="(action=='Add' || isEdit)">
+        <div class="box-body">
+            <div class="box-header with-border">
+                <h3 class="box-title">{{ action }}</h3>
+            </div><!-- /.box-header -->
+            <!-- form start -->
+            <form role="form">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="txtTitle">Title</label>
+                        <input type="text" class="form-control" id="txtTitle" placeholder="Title" ng-model="model.title" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Date</label>
+                        <p class="input-group">
+                            <input type="text" class="form-control" uib-datepicker-popup is-open="popup.opened" ng-model="model.date_format" datepicker-options="dateOptions" required/>
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtStartTime">Start time</label>
+                        <input type="text" class="form-control" id="txtStartTime" placeholder="HH:mm" ng-model="model.start_time" required time />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="txtEndTime">End time</label>
+                        <input type="text" class="form-control minute" id="txtEndTime" ng-model="model.end_time" placeholder="HH:mm" required time />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtStartLocation">Start location</label>
+                        <input type="text" class="form-control" id="txtStartLocation" placeholder="Start location" ng-model="model.start_location" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtEndLocation">End location</label>
+                        <input type="text" class="form-control" id="txtEndLocation" placeholder="End location" ng-model="model.end_location" required />
+                    </div>
+                </div>
+
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-primary pull-left" ng-click="save()">{{ action }}</button>
+                    &nbsp;
+                    <a href="/#/runs" class="btn btn-primary">Back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Profile Overview -->
+    <div class="box" ng-if="!(action=='Add' || isEdit)">
+        <div class="box-body">
+            <div class="box-header with-border">
+                <h3 class="box-title">Details</h3>
+            </div><!-- /.box-header -->
+            <!-- form start -->
+            <div class="box-body">
+                <div class="form-group">
+                    <p><b>Title</b> : {{ model.title }}</p>
+                    <p><b>Date</b> : {{ model.date_format }}</p>
+                    <p><b>Start time</b> : {{ model.start_time }}</p>
+                    <p><b>End time</b> : {{ model.end_time }}</p>
+                    <p><b>Start Location</b> : {{ model.start_location.unit_number }} {{ model.start_location.unit_number ? '/' : '' }} {{model.start_location.street_number}}, {{ model.start_location.street_name }}, {{model.start_location.suburb}} ,{{ model.start_location.state }}</p>
+                    <p><b>End Location</b> : 
+                    {{ model.end_location.unit_number }} {{ model.end_location.unit_number ? '/' : '' }} {{model.end_location.street_number}}, {{ model.end_location.street_name }}, {{model.end_location.suburb}} ,{{ model.end_location.state }}
+                    </p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-body">
+                <table id="parcel-table" class="table order-column">
+                    <thead>
+                    <tr>
+                        <th>Recipient name</th>
+                        <th>Weight</th>
+                        <th>Address</th>
+                        <th>Delivered</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,55 @@
+<div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-xs-6">
+                <label class="page-title">Admins</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="box-body">
+            <div class="box-header with-border">
+                <h3 class="box-title">{{ action }} admin</h3>
+            </div><!-- /.box-header -->
+            <!-- form start -->
+            <form role="form">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="txtFirstName">First Name</label>
+                        <input type="text" class="form-control" id="txtFirstName" placeholder="First Name" ng-model="model.first_name" required />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="txtLastName">Last Name</label>
+                        <input type="text" class="form-control" id="txtLastName" placeholder="Last Name" ng-model="model.last_name" required />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="txtEmail">Email</label>
+                        <input type="email" class="form-control" id="txtEmail" placeholder="Email" ng-model="model.email" required email/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtEmail">Password</label>
+                        <input type="password" class="form-control" id="txtEmail" placeholder="Password" ng-model="model.password" />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="txtPhone">Phone</label>
+                        <input type="text" class="form-control" id="txtPhone" placeholder="Phone" ng-model="model.phone" required />
+                    </div>
+
+                </div>
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-primary pull-left" ng-click="save()">{{action}}</button>
+                    &nbsp;
+                    <a href="/#/admin" class="btn btn-primary">Back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+</div>

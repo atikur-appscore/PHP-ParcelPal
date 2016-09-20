@@ -1,0 +1,28 @@
+{
+  "name": "apcsw",
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "authors": [
+    "apc"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "jquery": "^2.2.1",
+    "bootbox.js": "bootbox#^4.4.0",
+    "AngularJS-Toaster": "angularjs-toaster#^1.2.0",
+    "angular-route": "1.5.0",
+    "underscore": "^1.8.3",
+    "moment": "momentjs#^2.12.0",
+    "angular-sanitize": "^1.5.3"
+  }
+}

@@ -1,0 +1,39 @@
+<div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-xs-6">
+                <label class="page-title">Runs</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-xs-6">
+                <input id="txt-keyword" type="text" class="form-control search-bar" placeholder="Search"
+                    ng-model="keyword" key-enter="search()"/>
+            </div>
+            <div class="col-xs-6">
+                <button class="form-control big-button btn-blue" ng-click="search()">Search</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="box-body">
+            <table id="runs-table" class="table order-column">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Date</th>
+                        <th>Start time</th>
+                        <th>End time</th>
+                        <th>Start location</th>
+                        <th>End location</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>

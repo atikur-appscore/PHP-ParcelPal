@@ -1,0 +1,37 @@
+<div>
+    <div class="box">
+        <div class="box-body">
+            <div class="box-header with-border">
+                <h3 class="box-title text-black">Welcome, <span ng-bind="auth.first_name"></span> <span ng-bind="auth.last_name"></span></h3>
+            </div>
+
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-xs-4">
+                        <button class="form-control big-button-user-profile dashboard-blue">
+                            <span class="number" ng-bind="model.total_admin"></span><br/>
+                            <span class="title">Admins</span>
+                            <div class="square"></div>
+                        </button>
+                    </div>
+                    <div class="col-xs-4">
+                        <button class="form-control big-button-user-profile dashboard-crimson">
+                            <span class="number" ng-bind="model.total_user"></span><br/>
+                            <span class="title" >Users</span>
+                            <div class="square"></div>
+                        </button>
+                    </div>
+                    <div class="col-xs-4">
+                        <button class="form-control big-button-user-profile dashboard-black">
+                            <span class="number" ng-bind="model.total_chat"></span><br/>
+                            <span class="title">Runs</span>
+                            <div class="square"></div>
+                        </button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

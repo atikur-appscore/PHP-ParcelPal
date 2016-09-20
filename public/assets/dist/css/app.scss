@@ -1,0 +1,287 @@
+$darkBackground: #201F1F;
+$blueBackground: #1CACE5;
+$crimsonBackground: #BD2946;
+$lightGreyBorder: #DDDDDD;
+$mediumGreyBorder: #999999;
+$darkGreyBorder: #767676;
+$fullPageBackground: #101C1E;
+
+.skin-blue .main-header .logo{
+  background: $darkBackground;
+}
+
+.skin-blue .main-header .navbar{
+  background: $darkBackground;
+}
+
+.skin-blue .main-header .logo:hover {
+  background: $darkBackground;
+}
+
+.logo-text{
+  font-size: 60px;
+  color: white;
+}
+
+.page-title{
+  font-size: 32px;
+}
+
+
+.full-page-container{
+  background: $fullPageBackground;
+  //background: linear-gradient( rgba(200, 200, 200, 0.1), rgba(200, 200, 200, 0.1) ), url('/assets/dist/img/dark-background.jpg');
+  //background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+}
+
+.full-page-container .text-blue{
+  color: $blueBackground;
+}
+
+.full-page-container>div{
+  width: 340px;
+  margin: 0 auto;
+  float: none;
+  margin-top: 10%;
+}
+
+.btn-blue {
+  background: $blueBackground;
+  color: white;
+  font-weight: bold;
+}
+
+.lbl-edit{
+  line-height: 50px;
+  color: #999;
+  cursor: pointer;
+  margin: 0 0 0 10px;
+}
+
+.btn-edit {
+  background: $mediumGreyBorder;
+  color: white;
+  font-weight: bold;
+}
+
+.btn-interest {
+  background: $blueBackground;
+  border-radius: 8px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.full-page-container a{
+  color: white;
+  font-size: 18px;
+}
+
+.full-page-container .form-control{
+  font-size: 20px;
+  background-color: rgba(200, 200, 200, 0.1);
+  border-radius: 4px;
+  color: white;
+  border: none;
+  height: 60px;
+  width: 340px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.full-page-container .form-control.btn-blue{
+  background: $blueBackground;
+  color: white;
+}
+
+.form-control.big-button{
+  border-radius: 4px;
+  height: 40px;
+  width: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.form-control.search-bar{
+  border-radius: 4px;
+  height: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 2px solid $lightGreyBorder;
+  font-size: 16px;
+}
+
+.pagination{
+  font-size: 12px;
+  margin: 10px 0;
+}
+
+table.dataTable thead .sorting_asc:after{
+  content: "\e113";
+}
+
+table.dataTable thead .sorting_desc:after{
+  content: "\e114";
+}
+
+table.dataTable thead .sorting:after{
+  content: none;
+}
+
+button.btn-icon{
+  background: none;
+  border: none;
+}
+
+button.btn-icon.btn-edit{
+  float: right;
+  color: $mediumGreyBorder;
+  padding: 6px 12px;
+  box-sizing: border-box;
+}
+
+.form-control.btn-delete{
+  width: 100px;
+  background-color: #dd4b39;
+  border-color: #d73925;
+  color: white;
+}
+
+#interest-list button{
+  display: none;
+}
+
+#interest-list.edit button{
+  display: inline;
+  float: right;
+  position: relative;
+  top: 1px;
+  margin-left: 7px;
+  margin-right: 7px;
+}
+
+#interest-list.edit .form-control.big-button{
+  padding-right: 0px;
+}
+
+.box-header .box-title{
+  font-weight: bold;
+  color: $blueBackground;
+}
+
+.link-edit{
+  float: right;
+  color: $mediumGreyBorder;
+  padding: 6px;
+}
+
+.dataTables_wrapper .dataTables_filter{
+  display: none;
+}
+
+.form-control.big-button-user-profile{
+  border-radius: 4px;
+  height: 84px;
+  width: 100%;
+  text-align: left;
+  background: $darkGreyBorder;
+  color: white;
+  padding-top: 10px;
+}
+
+.form-control.big-button-user-profile.active{
+  background: $blueBackground;
+}
+
+.form-control.big-button-user-profile>span.number{
+  font-size: 36px;
+  line-height: 40px;
+}
+
+.form-control.big-button-user-profile>span.title{
+  font-size: 16px;
+}
+
+.square{
+  display: block;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  margin: 4px auto;
+  background: white;
+  -ms-transform: rotate(45deg); /* IE 9 */
+  -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+  transform: rotate(45deg);
+  visibility: hidden;
+}
+
+.form-control.big-button-user-profile.active>.square{
+  visibility: visible;
+}
+
+.box-header .box-title.tab{
+  color: black;
+}
+
+.user-photo{
+  height: 160px;
+  width: 160px;
+  border-radius: 8px;
+  padding: 8px;
+  background: $lightGreyBorder;
+  background: url('/assets/dist/img/user-photo-bg.png');
+  background-size: cover;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.form-control.user-photo-delete{
+  height: 28px;
+  width: 28px;
+  color: white;
+  border-radius: 8px;
+  background: red;
+  padding: 4px;
+  float: right;
+}
+
+.user-video{
+  height: 160px;
+  width: 160px;
+  border-radius: 8px;
+  padding: 8px;
+  background: $lightGreyBorder;
+  background: url('/assets/dist/img/user-video-bg.png');
+  background-size: cover;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.form-control.user-video-delete{
+  height: 28px;
+  width: 28px;
+  color: white;
+  border-radius: 8px;
+  background: red;
+  padding: 4px;
+  float: right;
+}
+
+
+.form-control.big-button-user-profile.dashboard-blue{
+  background: $blueBackground;
+}
+
+.form-control.big-button-user-profile.dashboard-crimson{
+  background: $crimsonBackground;
+}
+
+.form-control.big-button-user-profile.dashboard-black{
+  background: black;
+}

@@ -1,0 +1,134 @@
+<div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-xs-6">
+                <label class="page-title pull-left">Users</label>
+                <label ng-if="action=='Update' && !isEdit" class="lbl-edit pull-left" ng-click="switchMode()"><i class="glyphicon glyphicon-pencil"></i> <span>EDIT</span></label>
+            </div>
+            <div class="col-xs-6" ng-if="(action=='Update' && isEdit)">
+                <button class="form-control big-button btn-blue pull-right" ng-click="switchMode()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="box" ng-if="(action=='Add' || isEdit)">
+        <div class="box-body">
+            <div class="box-header with-border">
+                <h3 class="box-title">{{ action }}</h3>
+            </div><!-- /.box-header -->
+            <!-- form start -->
+            <form role="form">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="txtFirstName">First Name</label>
+                        <input type="text" class="form-control" id="txtFirstName" placeholder="First Name" ng-model="model.first_name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtLastName">Last Name</label>
+                        <input type="text" class="form-control" id="txtLastName" placeholder="Last Name" ng-model="model.last_name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="txtEmail">Email</label>
+                        <input type="email" class="form-control" id="txtEmail" placeholder="Email" ng-model="model.email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtPassword">Password</label>
+                        <input type="password" class="form-control" id="txtPassword" placeholder="Password" ng-model="model.password">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtPhone">Phone</label>
+                        <input type="number" class="form-control" id="txtPhone" placeholder="{{ model.phone }}" ng-model="model.phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Birthday</label>
+                        <p class="input-group">
+                            <input type="text" class="form-control" uib-datepicker-popup is-open="popup.opened" ng-model="model.birthday" datepicker-options="dateOptions" placeholder="{{ model.birthday }}"/>
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                        </p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Gender</label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" id="optionsRadios1" ng-model="model.gender_id" value="1">
+                                Male
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" id="optionsRadios2" ng-model="model.gender_id" value="2">
+                                Female
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtLocation">Location</label>
+                        <input type="text" class="form-control" id="txtLocation" placeholder="Location" ng-model="model.location">
+                    </div>
+
+                </div><!-- /.box-body -->
+
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-primary pull-left" ng-click="save()">{{ action }}</button>
+                    &nbsp;
+                    <a href="/#/user" class="btn btn-primary">Back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Profile Overview -->
+    <div class="box" ng-if="!(action=='Add' || isEdit)">
+        <div class="box-body">
+            <div class="box-header with-border">
+                <h3 class="box-title">Details</h3>
+            </div><!-- /.box-header -->
+            <!-- form start -->
+            <div class="box-body">
+                <div class="form-group">
+                    <!-- Row 1 -->
+                    <div class="form-group col-xs-4">
+                        <label><i class="fa fa-fw fa-user"></i>&nbsp;<span ng-bind="model.first_name"></span> <span ng-bind="model.last_name"></span></label>
+                    </div>
+                    <div class="form-group col-xs-4">
+                        <label><i class="fa fa-fw fa-phone"></i>&nbsp;<span ng-bind="model.phone"></span></label>
+                    </div>
+                    <div class="form-group col-xs-4">
+                        <label>&nbsp;</label>
+                    </div>
+                    <!-- Row 2 -->
+                    <div class="form-group col-xs-4">
+                        <label><i class="fa fa-fw fa-calendar"></i>&nbsp;<span ng-bind="model.birthday | date: 'dd-MM-yyyy'"></span></label>
+                    </div>
+                    <div class="form-group col-xs-4">
+                        <label><i class="fa fa-fw fa-at"></i>&nbsp;<span ng-bind="model.email"></span></label>
+                    </div>
+                    <div class="form-group col-xs-4">
+                        <label>&nbsp;</label>
+                    </div>
+                    <!-- Row 3 -->
+                    <div class="form-group col-xs-4">
+                        <label><i class="fa fa-fw fa-venus-mars"></i>&nbsp;<span ng-bind="translate.gender(model.gender_id)"></span></label>
+                    </div>
+                    <div class="form-group col-xs-4">
+                        <label><i class="fa fa-fw fa-home"></i>&nbsp;<span ng-bind="model.location"></span></label>
+                    </div>
+                    <div class="form-group col-xs-4">
+                        <label>&nbsp;</label>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
