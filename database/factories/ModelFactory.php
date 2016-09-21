@@ -26,8 +26,12 @@ $factory->define(App\Run::class, function (Faker\Generator $faker) {
         'date_at' => $faker->unixTime,
         'start_time' => $faker->time,
         'end_time' => $faker->time,
-        'start_location' => json_encode(['name' => $faker->cityPrefix, 'unit_number' => $faker->buildingNumber,'street_number' => $faker->streetAddress,'street_name' => $faker->streetName,'suburb'=>$faker->citySuffix,'state' => $faker->state], true),
-        'end_location' => json_encode(['name' => $faker->cityPrefix, 'unit_number' => $faker->buildingNumber,'street_number' => $faker->streetAddress,'street_name' => $faker->streetName,'suburb'=>$faker->citySuffix,'state' => $faker->state], true),
+        'start_location' => json_encode(['name' => $faker->cityPrefix, 'unit_number' => $faker->buildingNumber,
+            'street_number' => $faker->streetAddress,'street_name' => $faker->streetName,'suburb'=>$faker->citySuffix,
+            'state' => $faker->state, 'latitude' => $faker->latitude,'longitude' => $faker->latitude], true),
+        'end_location' => json_encode(['name' => $faker->cityPrefix, 'unit_number' => $faker->buildingNumber,
+            'street_number' => $faker->streetAddress,'street_name' => $faker->streetName,'suburb'=>$faker->citySuffix,
+            'state' => $faker->state, 'latitude' => $faker->latitude,'longitude' => $faker->latitude], true),
         'distance' => $faker->randomNumber(5),
         'user_id' => 2,
     ];
@@ -39,7 +43,9 @@ $factory->define(App\Parcel::class, function (Faker\Generator $faker) {
         'parcel_id' => $faker->swiftBicNumber,
         'recipient_name' => $faker->name,
         'type' => 'Box',
-        'address' => json_encode(['name' => $faker->cityPrefix, 'unit_number' => $faker->buildingNumber,'street_number' => $faker->streetAddress,'street_name' => $faker->streetName,'suburb'=>$faker->citySuffix,'state' => $faker->state], true),
+        'address' => json_encode(['name' => $faker->cityPrefix, 'unit_number' => $faker->buildingNumber,
+            'street_number' => $faker->streetAddress,'street_name' => $faker->streetName,'suburb'=>$faker->citySuffix,
+            'state' => $faker->state, 'latitude' => $faker->latitude, 'longitude' => $faker->latitude], true),
         'weight' => $faker->numberBetween(10, 100),
         'delivery_instructions' => $faker->text,
         'priority' => 1
@@ -54,6 +60,8 @@ $factory->define(App\Favourite::class, function (Faker\Generator $faker) {
         'street_name' => $faker->streetName,
         'suburb' => $faker->citySuffix,
         'state' => $faker->state,
+        'latitude' => $faker->latitude,
+        'longitude' => $faker->latitude,
         'user_id' => 2,
     ];
 });

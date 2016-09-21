@@ -8,7 +8,7 @@ use App\Services\Contracts\FavouriteService;
 
 class FavouriteController extends ApiController
 {
-    protected $dataSelect = ['id','id as identifier','name','unit_number','street_number','street_name','suburb','state'];
+    protected $dataSelect = ['id','id as identifier','name','unit_number','street_number','street_name','suburb','state', 'latitude', 'longitude'];
 
     protected $rules = [
         'name' => "required|min:2|max:255",
@@ -39,7 +39,7 @@ class FavouriteController extends ApiController
 
     public function add(Request $request, FavouriteService $service)
     {
-        $data = $request->only('name','unit_number','street_number','street_name','suburb','state');
+        $data = $request->only('name','unit_number','street_number','street_name','suburb','state', 'latitude', 'longitude');
 
         return $this->storeData($this->rules, $data, $service);
     }
