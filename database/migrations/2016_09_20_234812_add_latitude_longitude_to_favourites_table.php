@@ -13,8 +13,8 @@ class AddLatitudeLongitudeToFavouritesTable extends Migration
     public function up()
     {
         Schema::table('favourites', function($table) {
-            $table->float('latitude')->after('state');
-            $table->float('longitude')->after('latitude');
+            $table->float('latitude', 10, 7)->after('state');
+            $table->float('longitude', 10, 7)->after('latitude');
         });
     }
 
