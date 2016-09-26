@@ -28,10 +28,10 @@ $factory->define(App\Run::class, function (Faker\Generator $faker) {
         'end_time' => $faker->time,
         'start_location' => json_encode(['name' => $faker->cityPrefix, 'unit_number' => $faker->buildingNumber,
             'street_number' => $faker->streetAddress,'street_name' => $faker->streetName,'suburb'=>$faker->citySuffix,
-            'state' => $faker->state, 'latitude' => $faker->latitude,'longitude' => $faker->latitude], true),
+            'state' => $faker->state, 'latitude' => $faker->latitude,'longitude' => $faker->longitude], true),
         'end_location' => json_encode(['name' => $faker->cityPrefix, 'unit_number' => $faker->buildingNumber,
             'street_number' => $faker->streetAddress,'street_name' => $faker->streetName,'suburb'=>$faker->citySuffix,
-            'state' => $faker->state, 'latitude' => $faker->latitude,'longitude' => $faker->latitude], true),
+            'state' => $faker->state, 'latitude' => $faker->latitude,'longitude' => $faker->longitude], true),
         'distance' => $faker->randomNumber(5),
         'user_id' => 2,
     ];
