@@ -45,7 +45,7 @@ $factory->define(App\Parcel::class, function (Faker\Generator $faker) {
         'type' => 'Box',
         'address' => json_encode(['name' => $faker->cityPrefix, 'unit_number' => $faker->buildingNumber,
             'street_number' => $faker->streetAddress,'street_name' => $faker->streetName,'suburb'=>$faker->citySuffix,
-            'state' => $faker->state, 'latitude' => $faker->latitude, 'longitude' => $faker->latitude], true),
+            'state' => $faker->state, 'latitude' => $faker->latitude, 'longitude' => $faker->longitude], true),
         'weight' => $faker->numberBetween(10, 100),
         'delivery_instructions' => $faker->text,
         'priority' => 1
@@ -61,7 +61,7 @@ $factory->define(App\Favourite::class, function (Faker\Generator $faker) {
         'suburb' => $faker->citySuffix,
         'state' => $faker->state,
         'latitude' => $faker->latitude,
-        'longitude' => $faker->latitude,
+        'longitude' => $faker->longitude,
         'user_id' => 2,
     ];
 });
