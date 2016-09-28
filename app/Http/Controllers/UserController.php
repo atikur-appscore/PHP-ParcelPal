@@ -151,12 +151,12 @@ class UserController extends Controller
     {
         $id= \Crypt::decrypt($key);
         $user = app(User::class)->find($id);
-        if ($user->active) {
-            return redirect('/#/login');
+        if ($user->activate) {
+            return view('activate'); //redirect('/#/login');
         }
         $user->update(['active' => true,]);
 
-        return redirect('/#/login');
+        return view('activate'); //redirect('/#/login');
         
     }
 }
