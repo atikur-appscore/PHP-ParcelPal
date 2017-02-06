@@ -48,7 +48,9 @@ $factory->define(App\Parcel::class, function (Faker\Generator $faker) {
             'state' => $faker->state, 'latitude' => $faker->latitude, 'longitude' => $faker->longitude], true),
         'weight' => $faker->numberBetween(10, 100),
         'delivery_instructions' => $faker->text,
-        'priority' => 1
+        'priority' => 1,
+        'user_id' => 2,
+
     ];
 });
 
